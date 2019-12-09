@@ -1,0 +1,31 @@
+.card-plain{
+    background: transparent;
+    box-shadow: none;
+
+    .card-body,
+    .card-header{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .card-header:after{
+        width: 100%;
+        left: 0;
+    }
+}
+
+
+.img_container{
+    display: flex;
+    padding: 15px 12px;
+    box-sizing: border-box;
+    width: auto; 
+    height: 300px;
+    object-fit:scale-down;
+
+    img {
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
