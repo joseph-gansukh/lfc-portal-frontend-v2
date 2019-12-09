@@ -40,7 +40,6 @@ function IndexHeader() {
             <br></br>
             <img
               alt="..."
-              //className="n-logo"
               style={{width: '470px'}}
               src={require("assets/img/LFC-logo.png")}
             ></img>
