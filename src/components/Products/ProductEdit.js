@@ -28,14 +28,15 @@ class ProductEdit extends React.Component {
     const picture = this.state.picture ? this.state.picture : this.props.product.picture_url;
     const product = {id: id, name: name, description: description, price: price, category: category}
     console.log('picture: ', picture)
-    // const productData = new FormData()
-    // productData.append('product[name]', name)
-    // productData.append('product[description]', description)
-    // productData.append('product[price]', price)
-    // productData.append('product[category]', category)
-    // productData.append('product[picture]', picture)
-    this.props.updateProduct(product, this.props.history);
-    // this.props.updateProduct(productData, this.props.history);
+    const productData = new FormData()
+    productData.append('product[name]', name)
+    productData.append('product[description]', description)
+    productData.append('product[price]', price)
+    productData.append('product[category]', category)
+    productData.append('product[picture]', picture)
+    // this.props.updateProduct(product, this.props.history);
+    debugger
+    this.props.updateProduct(productData, this.props.history);
   };
 
   handleCancel = () => {

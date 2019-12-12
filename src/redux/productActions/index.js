@@ -73,6 +73,8 @@ export const deleteProduct = (id) => {
   };
 };
 
+
+
 export const updateProduct = (product, history) => {
   const productId = product.id;
   return function(dispatch) {
@@ -98,7 +100,11 @@ export const updateProduct = (product, history) => {
 //       productData.append('product[price]', price)
 //       productData.append('product[category]', category)
 //       productData.append('product[picture]', picture)
-//     return axios.patch(`${apiUrl}/${product.id}.json`, {name: product.name, description: product.description, price: product.price, category: product.category})
+//     return fetch(`${apiUrl}/${product.id}.json`, {name: product.name, description: product.description, price: product.price, category: product.category}, {
+//       method: 'post',
+//       body: productData,
+//       contentType: false
+//     })
 //       .then(response => {
 //         const data = response.data;
 //         dispatch({type: UPDATE_PRODUCT, payload: {id: data.id, name: data.name, description: data.description, price: data.price, category: data.category}})

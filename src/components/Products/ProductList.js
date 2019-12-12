@@ -15,11 +15,37 @@ import {
 } from "reactstrap";
 import Footer from 'components/Footers/Footer';
 import ProductInfoHeader from 'components/Headers/ProductInfoHeader';
+import ProductFilter from './ProductFilter';
 
 class ProductList extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      filterApplied: '',
+    }
+  }
+
+
+  onFilterChange = (categorySelected) => {
+    this.setState({
+      filterApplied: categorySelected
+    })
+  }
+
+  getProductsToRender = () => {
+    if (this.state.filterApplied) {
+      return this.props.products.filter(product => product.category === this.state.filterApplied)
+    } else {
+      return this.props.products
+    }
+  }
   render() {
-    console.log('role:', this.props.role)
-    if(this.props.products.length) {
+    // console.log('role:', this.props.role)
+    // console.log('products: ', this.props.products)
+
+    if(this.getProductsToRender().length) {
       return (
         <div >
           <ProductNavbar />
@@ -28,13 +54,14 @@ class ProductList extends Component {
           <Container className="text-center">
             <h4 >All Products</h4>
           </Container>
+          <ProductFilter onFilterChange={this.onFilterChange}/>
           </div>
           <div className="section section-tabs">
         <Container>
           <Row>
             
-          {this.props.products.map(product => {                     
-            console.log(product.picture_url)
+          {this.getProductsToRender().map(product => {                     
+            {/* console.log(product.picture_url) */}
             return (
               <div  key={product.id}>
               <Col >
