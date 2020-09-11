@@ -2,7 +2,7 @@
 
 # Project Overview
 
-* LFC portal is a casket distributor website solely servicing funeral homes and funeral directors. 
+* LFC portal is a product distributor website solely servicing funeral homes and funeral directors. 
 
 # Technologies and Frameworks
 
